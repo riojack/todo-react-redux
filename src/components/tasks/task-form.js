@@ -142,6 +142,213 @@ console.log('State : '+this.state);
   }
      
                   //value={tasks.length && tasks[0][objRef] != "" && tasks[0][objRef] == this.state[objRef]  ? tasks[0][objRef] : ""}
+    prospectPlansFeatures(){
+        <section id="prospect-plans-features" className="page">
+            <form className="text-center" >
+            <div className="container">
+                <div className="row">
+                    <div className="col-sm-4">
+                        <div className="timeline-image1 background-gray">
+                            <h2>1</h2>
+                        </div>
+                        <h5 className="timeline-heading1">SIGN IN</h5>
+                    </div>
+                    <div className="col-sm-4">
+                        <div className="timeline-image2 background-gray">
+                            <h2>2</h2>
+                        </div>
+                        <h5 className="timeline-heading2">GENERAL INFORMATION</h5>
+                    </div>
+                    <div className="col-sm-4">
+                        <div className="timeline-image3 background-blue">
+                            <h2>3</h2>
+                        </div>
+                        <h5 className="timeline-heading3">BILLING</h5>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col-xs-12">
+                        <div className="text-center plans-header">
+                            <h2>Plans & Features</h2>
+                        </div>
+                    </div>
+                </div>
+                <div className="row">
+                  <div className="col-md-offset-1 col-md-2">
+                    <table id="plans-features-table" className="text-center">
+                        <thead>	  
+                          <tr id="table-header-row">
+                            <th className="features"><h5>Basic</h5> <div className="cost" >Free</div> <div>Showcase & track your recruiting</div></th>		
+                            </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td className="" >Showcase Contact, Athletic, & Academic Information to College Coaches</td>
+                          </tr>
+                          <tr>
+                            <td className="" >Showcase Recruiting Interest To College Coaches</td>
+                          </tr>
+                        </tbody>
+                        <tfoot>
+                          <tr>	
+                            
+                          </tr>
+                        </tfoot>
+                    </table>
+                  </div>
+                  <div className="col-md-2">
+                    <table id="plans-features-table" className="text-center">
+                        
+                        <thead>	  
+                          <tr id="table-header-row">
+                            <th className="features"><h5>Plus</h5> 
+                                <div className="cost" >$5/month</div> 
+                                <div className="cost-month" >$54/year (10% off)</div> 
+                                <div>Showcase Your Information & Store Highlight</div>
+                            </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td className="" >Showcase Contact, Athletic, & Academic Information to College Coaches</td>
+                          </tr>
+                          <tr>
+                            <td className="" >Showcase Recruiting Interest To College Coaches</td>
+                          </tr>
+                          
+                          <tr>
+                            <td className=" background-gray" >Store Highlight Video</td>
+                          </tr>
+                        </tbody>
+                        <tfoot>
+                          <tr>	
+                            
+                          </tr>
+                        </tfoot>
+                    </table>
+                  </div>
+                  <div className="col-md-2">
+                    <table id="plans-features-table" className="text-center">
+                        <thead>	  
+                          <tr id="table-header-row">
+                            <th className="features"><h5>Premium 1</h5> 
+                                <div className="cost" >$13.33/month</div> 
+                                <div className="cost-month" >$144/year (10% off)</div>  
+                                <div>Let us send out your highlight video</div>
+                            </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td className="" >Showcase Contact, Athletic, & Academic Information to College Coaches</td>
+                          </tr>
+                          <tr>
+                            <td className="" >Showcase Recruiting Interest To College Coaches</td>
+                          </tr>
+                          
+                          <tr>
+                            <td className=" background-gray" >Highlight Distributed To College Coaches</td>
+                          </tr>
+                        </tbody>
+                        <tfoot>
+                          <tr>
+                            
+                          </tr>
+                        </tfoot>
+                    </table>
+                  </div>
+                  <div className="col-md-2">
+                    <table id="plans-features-table" className="text-center">
+                        <thead>	  
+                          <tr id="table-header-row">
+                            <th className="features"><h5>Premium 2</h5> 
+                                <div className="cost" >$21.67/month</div> 
+                                <div className="cost-month" >$234/year (10% off)</div>  
+                                <div>Let us create and send one video/year</div>
+                            </th>		
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td className="" >Showcase Contact, Athletic, & Academic Information to College Coaches</td>
+                          </tr>
+                          <tr>
+                            <td className="" >Showcase Recruiting Interest To College Coaches</td>
+                          </tr>
+                          
+                          <tr>
+                            <td className=" background-gray" >Highlight Distributed To College Coaches</td>
+                          </tr>
+                          <tr>
+                            <td className=" background-blue" >Highlight Produced & Distributed To College Coaches (Once)</td>
+                          </tr>
+                        </tbody>
+                        <tfoot>
+                          <tr>
+                            
+                          </tr>
+                        </tfoot>
+                    </table>
+                  </div>
+                  <div className="col-md-2">
+                    <table id="plans-features-table" className="text-center">
+                        <thead>	  
+                          <tr id="table-header-row">
+                            <th className="features"><h5>Premium 3</h5> 
+                                <div className="cost" >$38.33/month</div> 
+                                <div className="cost-month" >$414/year (10% off)</div> 
+                                <div>Let us create and send two video/year</div></th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td className="" >Showcase Contact, Athletic, & Academic Information to College Coaches</td>
+                          </tr>
+                          <tr>
+                            <td className="" >Showcase Recruiting Interest To College Coaches</td>
+                          </tr>
+                          
+                          <tr>
+                            <td className=" background-gray" >Highlight Distributed To College Coaches</td>
+                          </tr>
+                          <tr>
+                            <td className=" background-blue" >Highlight Produced & Distributed To College Coaches (Once)</td>
+                          </tr>
+                          <tr>
+                            <td className=" background-blue" >Highlight Produced & Distributed To College Coaches (Twice)</td>
+                          </tr>
+                        </tbody>
+                        <tfoot>
+                          <tr>
+                            
+                          </tr>
+                        </tfoot>
+                        
+                    </table>
+                  </div>
+                  <select id="price-plan" style={{margin:'20px', width:'85%'}} name="price-plan" onChange={ this.onChangePricePlan.bind(this)} value={this.state.pricePlan} className="form-control standalone" type="select" placeholder="select">
+                        <option value="none" defaultValue>Select Price Plan</option>
+                        <option value="Basic Plan">Basic - Free</option>
+                        <option value="Plus Monthly Plan">Plus - $5/month</option>
+                        <option value="Plus Yearly Plan">Plus - $54/year(10% off)</option>
+                        <option value="Premium 1 - Monthly Plan">Premium 1 - $13.33/month</option>
+                        <option value="Premium 1 - Yearly Plan">Premium 1 - $144/year(10% off)</option>
+                        <option value="Premium 2 - Monthly Plan">Premium 2 - $21.67/month</option>
+                        <option value="Premium 2 - Yearly Plan">Premium 2 - $234/year(10% off)</option>
+                        <option value="Premium 3 - Monthly Plan">Premium 3 - $38.33/month</option>
+                        <option value="Premium 3 - Yearly Plan">Premium 3 - $414/year(10% off)</option>
+                    </select>
+                </div>
+            </div>
+            
+            
+              
+                <button onClick={this.onSubmit2}  className="btn btn-default btn-large">Finish</button>
+           
+            </form>
+          </section>
+
+    }
     genearlInformation(){
       var genInfo={
               contactInfo: {
@@ -278,212 +485,7 @@ console.log('State : '+this.state);
     return (
         <div>
         { this.genearlInformation()} 
-      
-        
-       <section id="prospect-plans-features" className="page">
-        <form className="text-center" >
-    	<div className="container">
-    		<div className="row">
-    			<div className="col-sm-4">
-    				<div className="timeline-image1 background-gray">
-    					<h2>1</h2>
-    				</div>
-    				<h5 className="timeline-heading1">SIGN IN</h5>
-    			</div>
-    			<div className="col-sm-4">
-    				<div className="timeline-image2 background-gray">
-    					<h2>2</h2>
-    				</div>
-    				<h5 className="timeline-heading2">GENERAL INFORMATION</h5>
-    			</div>
-    			<div className="col-sm-4">
-    				<div className="timeline-image3 background-blue">
-    					<h2>3</h2>
-    				</div>
-	    			<h5 className="timeline-heading3">BILLING</h5>
-    			</div>
-    		</div>
-    		<div className="row">
-    			<div className="col-xs-12">
-    				<div className="text-center plans-header">
-    					<h2>Plans & Features</h2>
-    				</div>
-    			</div>
-    		</div>
-    		<div className="row">
-    		  <div className="col-md-offset-1 col-md-2">
-    			<table id="plans-features-table" className="text-center">
-					<thead>	  
-					  <tr id="table-header-row">
-						<th className="features"><h5>Basic</h5> <div className="cost" >Free</div> <div>Showcase & track your recruiting</div></th>		
-						</tr>
-					</thead>
-					<tbody>
-					  <tr>
-						<td className="" >Showcase Contact, Athletic, & Academic Information to College Coaches</td>
-					  </tr>
-					  <tr>
-						<td className="" >Showcase Recruiting Interest To College Coaches</td>
-					  </tr>
-					</tbody>
-					<tfoot>
-					  <tr>	
-						
-					  </tr>
-					</tfoot>
-				</table>
-    		  </div>
-    		  <div className="col-md-2">
-    			<table id="plans-features-table" className="text-center">
-					
-					<thead>	  
-					  <tr id="table-header-row">
-						<th className="features"><h5>Plus</h5> 
-							<div className="cost" >$5/month</div> 
-							<div className="cost-month" >$54/year (10% off)</div> 
-							<div>Showcase Your Information & Store Highlight</div>
-						</th>
-						</tr>
-					</thead>
-					<tbody>
-					  <tr>
-						<td className="" >Showcase Contact, Athletic, & Academic Information to College Coaches</td>
-					  </tr>
-					  <tr>
-						<td className="" >Showcase Recruiting Interest To College Coaches</td>
-					  </tr>
-					  
-					  <tr>
-						<td className=" background-gray" >Store Highlight Video</td>
-					  </tr>
-					</tbody>
-					<tfoot>
-					  <tr>	
-						
-					  </tr>
-					</tfoot>
-				</table>
-    		  </div>
-    		  <div className="col-md-2">
-    			<table id="plans-features-table" className="text-center">
-					<thead>	  
-					  <tr id="table-header-row">
-						<th className="features"><h5>Premium 1</h5> 
-							<div className="cost" >$13.33/month</div> 
-							<div className="cost-month" >$144/year (10% off)</div>  
-							<div>Let us send out your highlight video</div>
-						</th>
-						</tr>
-					</thead>
-					<tbody>
-					  <tr>
-						<td className="" >Showcase Contact, Athletic, & Academic Information to College Coaches</td>
-					  </tr>
-					  <tr>
-						<td className="" >Showcase Recruiting Interest To College Coaches</td>
-					  </tr>
-					  
-					  <tr>
-						<td className=" background-gray" >Highlight Distributed To College Coaches</td>
-					  </tr>
-					</tbody>
-					<tfoot>
-					  <tr>
-						
-					  </tr>
-					</tfoot>
-				</table>
-    		  </div>
-    		  <div className="col-md-2">
-    			<table id="plans-features-table" className="text-center">
-					<thead>	  
-					  <tr id="table-header-row">
-						<th className="features"><h5>Premium 2</h5> 
-							<div className="cost" >$21.67/month</div> 
-							<div className="cost-month" >$234/year (10% off)</div>  
-							<div>Let us create and send one video/year</div>
-						</th>		
-					  </tr>
-					</thead>
-					<tbody>
-					  <tr>
-						<td className="" >Showcase Contact, Athletic, & Academic Information to College Coaches</td>
-					  </tr>
-					  <tr>
-						<td className="" >Showcase Recruiting Interest To College Coaches</td>
-					  </tr>
-					  
-					  <tr>
-						<td className=" background-gray" >Highlight Distributed To College Coaches</td>
-					  </tr>
-					  <tr>
-						<td className=" background-blue" >Highlight Produced & Distributed To College Coaches (Once)</td>
-					  </tr>
-					</tbody>
-					<tfoot>
-					  <tr>
-						
-					  </tr>
-					</tfoot>
-				</table>
-    		  </div>
-    		  <div className="col-md-2">
-    			<table id="plans-features-table" className="text-center">
-					<thead>	  
-					  <tr id="table-header-row">
-						<th className="features"><h5>Premium 3</h5> 
-							<div className="cost" >$38.33/month</div> 
-							<div className="cost-month" >$414/year (10% off)</div> 
-							<div>Let us create and send two video/year</div></th>
-					  </tr>
-					</thead>
-					<tbody>
-					  <tr>
-						<td className="" >Showcase Contact, Athletic, & Academic Information to College Coaches</td>
-					  </tr>
-					  <tr>
-						<td className="" >Showcase Recruiting Interest To College Coaches</td>
-					  </tr>
-					  
-					  <tr>
-						<td className=" background-gray" >Highlight Distributed To College Coaches</td>
-					  </tr>
-					  <tr>
-						<td className=" background-blue" >Highlight Produced & Distributed To College Coaches (Once)</td>
-					  </tr>
-					  <tr>
-						<td className=" background-blue" >Highlight Produced & Distributed To College Coaches (Twice)</td>
-					  </tr>
-					</tbody>
-					<tfoot>
-					  <tr>
-						
-					  </tr>
-					</tfoot>
-					
-				</table>
-    		  </div>
-    		  <select id="price-plan" style={{margin:'20px', width:'85%'}} name="price-plan" onChange={ this.onChangePricePlan.bind(this)} value={this.state.pricePlan} className="form-control standalone" type="select" placeholder="select">
-					<option value="none" defaultValue>Select Price Plan</option>
-					<option value="Basic Plan">Basic - Free</option>
-					<option value="Plus Monthly Plan">Plus - $5/month</option>
-					<option value="Plus Yearly Plan">Plus - $54/year(10% off)</option>
-					<option value="Premium 1 - Monthly Plan">Premium 1 - $13.33/month</option>
-					<option value="Premium 1 - Yearly Plan">Premium 1 - $144/year(10% off)</option>
-					<option value="Premium 2 - Monthly Plan">Premium 2 - $21.67/month</option>
-					<option value="Premium 2 - Yearly Plan">Premium 2 - $234/year(10% off)</option>
-					<option value="Premium 3 - Monthly Plan">Premium 3 - $38.33/month</option>
-					<option value="Premium 3 - Yearly Plan">Premium 3 - $414/year(10% off)</option>
-				</select>
-    		</div>
-    	</div>
-    	
-        
-          
-          	<button onClick={this.onSubmit2}  className="btn btn-default btn-large">Finish</button>
-       
-        </form>
-      </section> 
+        { this.prospectPlansFeatures()} 
       
       	<div id="letter-update" className="recruit-update-container text-center">
 			<u><h3>Recruiting Letter</h3></u>

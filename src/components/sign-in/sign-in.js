@@ -10,15 +10,14 @@ export class SignIn extends Component {
     signInWithTwitter: PropTypes.func.isRequired
   };
 
-  render() {
-    const {
-      signInWithFacebook,
-      signInWithGoogle,
-      signInWithTwitter
-    } = this.props;
-
-    return (
-      <section id="app-sign-in" className="">
+  signIn() {
+        const {
+          signInWithFacebook,
+          signInWithGoogle,
+          signInWithTwitter
+        } = this.props;
+      return(
+       <section id="app-sign-in" className="">
     	<div className="container">
     		<div className="row">
     			<div id="logo" className="col-sm-offset-3 col-sm-6 input-box">
@@ -58,6 +57,19 @@ export class SignIn extends Component {
     	
           
       </section>
+
+
+
+      );
+
+  }
+
+  render() {
+
+    return (
+        <div>
+            { this.signIn() }
+        </div>
     );
   }
 }
