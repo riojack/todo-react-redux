@@ -144,8 +144,8 @@ console.log('State : '+this.state);
                   //value={tasks.length && tasks[0][objRef] != "" && tasks[0][objRef] == this.state[objRef]  ? tasks[0][objRef] : ""}
   mappedInputs(object){
 
-// Set state = Tasks !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-      this.state = Object.assign({}, this.state, tasks);
+    // Set state = Tasks !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    this.state = Object.assign({}, this.state, tasks);
 
       //debugger;
       const {tasks} = this.props;
@@ -163,7 +163,7 @@ console.log('State : '+this.state);
                   autoFocus
                   className="task-form__input"
                   maxLength="64"
-                  onChange={this.onChange.bind(this,objRef, this.displayAcademicInfo )}
+                  onChange={this.onChange.bind(this,objRef)}
                   onKeyUp={this.onKeyUp}
                   
                   placeholder={tasks.length && tasks[0][objRef] != "" ? tasks[0][objRef] :objDisplay} 
