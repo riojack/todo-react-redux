@@ -142,41 +142,7 @@ console.log('State : '+this.state);
   }
      
                   //value={tasks.length && tasks[0][objRef] != "" && tasks[0][objRef] == this.state[objRef]  ? tasks[0][objRef] : ""}
-  mappedInputs(object){
-
-    // Set state = Tasks !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-    this.state = Object.assign({}, this.state, tasks);
-
-      //debugger;
-      const {tasks} = this.props;
-      return Object.keys(object).map((obj,k)=>{
-          var objRef = object[obj]['ref'],
-          objDisplay = object[obj]['display'];
-          //tasks.length ? console.log(JSON.stringify(tasks[0],null,2)): console.log('nothing here');
-          return (
-              <div 
-                  key={k}
-                  style={{margin:'20px'}}
-              >
-                <input
-                  autoComplete="off"
-                  autoFocus
-                  className="task-form__input"
-                  maxLength="64"
-                  onChange={this.onChange.bind(this,objRef)}
-                  onKeyUp={this.onKeyUp}
-                  
-                  placeholder={tasks.length && tasks[0][objRef] != "" ? tasks[0][objRef] :objDisplay} 
-                  ref={c => objRef  = c}
-                  type="text"
-                  value={tasks.length && tasks[objRef] != "" ? tasks[objRef]: this.state[objRef]  }
-                />
-              </div>
-          )
-      });
-  }
-
-  render() {
+    genearlInformation(){
       var genInfo={
               contactInfo: {
                    1:{ ref:'firstName',       display: 'First Name'       },
@@ -211,33 +177,8 @@ console.log('State : '+this.state);
                   27:{ ref:'classRank',     display: 'Class Rank'        },
               }
           };
-
-        var divStyle = { display: 'inline-block', width: '33%', float: 'left', padding: 10, };
-    //      <form className="task-form" onSubmit={this.onSubmit} noValidate>
-    //        <div className="g-row">
-    //            <div style={divStyle} className="g-col">
-    //                <h1>Contact Information :</h1>
-    //                {this.mappedInputs(genInfo.contactInfo)} 
-    //            </div>
-    //            <div style={divStyle} className="g-col">
-    //                <h1>Athlete Information:</h1>
-    //                {this.mappedInputs(genInfo.athleteInfo)}
-    //            </div>
-    //            <div style={divStyle} className="g-col">
-    //                <h1>Academic Information :</h1>
-    //                {this.mappedInputs(genInfo.academicInfo)}
-    //            </div>
-    //        </div>
-    //        <div className="g-row">
-    //            <div className="g-col">
-    //                <button onClick={this.onSubmit} >Submit</button>
-    //            </div>
-    //        </div>
-    //  </form>
-    return (
-        <div>
-        
-      <section id="general-info" className="page">
+        debugger;
+      return(<section id="general-info" className="page">
         <form onSubmit={ this.handleSubmit }>
     	<div className="container">
     		<div className="row">
@@ -296,7 +237,48 @@ console.log('State : '+this.state);
           
           <button onClick={this.onSubmit} id="prospect-data-button" className="btn btn-default btn-large center-button">NEXT</button>
         </form>
-      </section>
+      </section>); 
+
+    }
+  mappedInputs(object){
+
+    // Set state = Tasks !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    this.state = Object.assign({}, this.state, tasks);
+
+      //debugger;
+      const {tasks} = this.props;
+      return Object.keys(object).map((obj,k)=>{
+          var objRef = object[obj]['ref'],
+          objDisplay = object[obj]['display'];
+          //tasks.length ? console.log(JSON.stringify(tasks[0],null,2)): console.log('nothing here');
+          return (
+              <div 
+                  key={k}
+                  style={{margin:'20px'}}
+              >
+                <input
+                  autoComplete="off"
+                  autoFocus
+                  className="task-form__input"
+                  maxLength="64"
+                  onChange={this.onChange.bind(this,objRef)}
+                  onKeyUp={this.onKeyUp}
+                  
+                  placeholder={tasks.length && tasks[0][objRef] != "" ? tasks[0][objRef] :objDisplay} 
+                  ref={c => objRef  = c}
+                  type="text"
+                  value={tasks.length && tasks[objRef] != "" ? tasks[objRef]: this.state[objRef]  }
+                />
+              </div>
+          )
+      });
+  }
+
+  render() {
+    return (
+        <div>
+        { this.genearlInformation()} 
+      
         
        <section id="prospect-plans-features" className="page">
         <form className="text-center" >
@@ -633,3 +615,24 @@ console.log('State : '+this.state);
     );
   }
 }
+    //      <form className="task-form" onSubmit={this.onSubmit} noValidate>
+    //        <div className="g-row">
+    //            <div style={divStyle} className="g-col">
+    //                <h1>Contact Information :</h1>
+    //                {this.mappedInputs(genInfo.contactInfo)} 
+    //            </div>
+    //            <div style={divStyle} className="g-col">
+    //                <h1>Athlete Information:</h1>
+    //                {this.mappedInputs(genInfo.athleteInfo)}
+    //            </div>
+    //            <div style={divStyle} className="g-col">
+    //                <h1>Academic Information :</h1>
+    //                {this.mappedInputs(genInfo.academicInfo)}
+    //            </div>
+    //        </div>
+    //        <div className="g-row">
+    //            <div className="g-col">
+    //                <button onClick={this.onSubmit} >Submit</button>
+    //            </div>
+    //        </div>
+    //  </form>
