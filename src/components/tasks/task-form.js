@@ -99,15 +99,15 @@ console.log('State : '+this.state);
     // tasks.length ? this.props.updateTask(this.props.tasks[0], this.state): this.firstSubmit(title, event.target.value);
     this.props.updateTask(this.props.tasks[0], this.state);
     //this.clearInput();
-    if (title.pricePlan !== "") {
-    document.getElementById('general-info').style.display='none';
-  	document.getElementById('prospect-dashboard').style.display='block';
-  	window.scrollTo(0, 0);
-    } else {
-    document.getElementById('general-info').style.display='none';
-  	document.getElementById('prospect-plans-features').style.display='block';
-  	window.scrollTo(0, 0);
-  	}
+    //if (title.pricePlan !== "") {
+    //document.getElementById('general-info').style.display='none';
+  	//document.getElementById('prospect-dashboard').style.display='block';
+  	//window.scrollTo(0, 0);
+    //} else {
+    //document.getElementById('general-info').style.display='none';
+  	//document.getElementById('prospect-plans-features').style.display='block';
+  	//window.scrollTo(0, 0);
+  	//}
   }
   
    onSubmit2(event) {
