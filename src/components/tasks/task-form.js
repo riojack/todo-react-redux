@@ -10,7 +10,9 @@ export class TaskForm extends Component {
   constructor(props, context) {
     super(props, context);
 
-    this.state = {title: 'true'};
+    this.state = {
+        title: 'true',
+    };
 
     this.onChange = this.onChange.bind(this);
     this.onKeyUp = this.onKeyUp.bind(this);
@@ -118,15 +120,15 @@ console.log('State : '+this.state);
     // tasks.length ? this.props.updateTask(this.props.tasks[0], this.state): this.firstSubmit(title, event.target.value);
     this.props.updateTask(this.props.tasks[0], this.state);
     //this.clearInput();
-    if (title.firstName !== "") {
-    document.getElementById('prospect-plans-features').style.display='none';
-  	document.getElementById('prospect-dashboard').style.display='block';
-  	window.scrollTo(0, 0);
-    } else {
-    document.getElementById('prospect-plans-features').style.display='none';
-  	document.getElementById('prospect-confirmation').style.display='block';
-  	window.scrollTo(0, 0);
-  	}
+    //if (title.firstName !== "") {
+    //document.getElementById('prospect-plans-features').style.display='none';
+  	//document.getElementById('prospect-dashboard').style.display='block';
+  	//window.scrollTo(0, 0);
+    //} else {
+    //document.getElementById('prospect-plans-features').style.display='none';
+  	//document.getElementById('prospect-confirmation').style.display='block';
+  	//window.scrollTo(0, 0);
+  	//}
   }
      
     submitUpdate(event) {
@@ -349,7 +351,7 @@ console.log('State : '+this.state);
           </section>
 
     }
-    genearlInformation(){
+    generalInformation(){
       var genInfo={
               contactInfo: {
                    1:{ ref:'firstName',       display: 'First Name'       },
@@ -384,7 +386,6 @@ console.log('State : '+this.state);
                   27:{ ref:'classRank',     display: 'Class Rank'        },
               }
           };
-        debugger;
       return(<section id="general-info" className="page">
         <form onSubmit={ this.handleSubmit }>
     	<div className="container">
@@ -480,13 +481,8 @@ console.log('State : '+this.state);
           )
       });
   }
-
-  render() {
-    return (
-        <div>
-        { this.genearlInformation()} 
-        { this.prospectPlansFeatures()} 
-      
+  letterUpdate(){
+      return(
       	<div id="letter-update" className="recruit-update-container text-center">
 			<u><h3>Recruiting Letter</h3></u>
 			<input type="text"/><div className="btn-default search">Search School</div>
@@ -501,22 +497,29 @@ console.log('State : '+this.state);
 			</div> 
 			<button className="btn btn-default btn-large" onClick={this.submitUpdate}>Submit</button>       
 		</div>
-        
-        <div id="text-update" className="recruit-update-container text-center">
-			  <u><h3>Recruiting Text</h3></u>
-			  <input type="text"/><div className="btn-default search">Search School</div>
-			  <div className="letter-attributes background-light-gray"> 
-				<label htmlFor="sel1"></label>
-						<select id="sel1" className="form-control standalone" type="select" label="Select" placeholder="select">
-							<option value="NCAA D1  V">NCAA D1  V</option>
-							<option value="NCAA D2  V">NCAA D2  V</option>
-							<option value="NCAA D3  V">NCAA D3  V</option>
-							<option value="NCAA NAIA  V">NCAA NAIA  V</option>
-						</select> 
-			  </div>   
-			  <button className="btn btn-default btn-large" onClick={this.submitUpdate}>Submit</button>            
-        </div>
-        
+      );
+  }
+  textUpdate(){
+      return(
+          <div id="text-update" className="recruit-update-container text-center">
+                  <u><h3>Recruiting Text</h3></u>
+                  <input type="text"/><div className="btn-default search">Search School</div>
+                  <div className="letter-attributes background-light-gray"> 
+                    <label htmlFor="sel1"></label>
+                            <select id="sel1" className="form-control standalone" type="select" label="Select" placeholder="select">
+                                <option value="NCAA D1  V">NCAA D1  V</option>
+                                <option value="NCAA D2  V">NCAA D2  V</option>
+                                <option value="NCAA D3  V">NCAA D3  V</option>
+                                <option value="NCAA NAIA  V">NCAA NAIA  V</option>
+                            </select> 
+                  </div>   
+                  <button className="btn btn-default btn-large" onClick={this.submitUpdate}>Submit</button>            
+            </div>
+
+      ); 
+  }
+  emailUpdate(){
+      return(
         <div id="email-update" className="recruit-update-container text-center">
           <u><h3>Recruiting Email</h3></u>
           <input type="text"/><div className="btn-default search">Search School</div>
@@ -531,7 +534,10 @@ console.log('State : '+this.state);
           </div>   
           <button className="btn btn-default btn-large" onClick={this.submitUpdate}>Submit</button>           
         </div>
-        
+      );
+  }
+  callUpdate(){
+      return(
         <div id="call-update" className="recruit-update-container text-center">
           <u><h3>Recruiting Phone Call</h3></u>
           <input type="text"/><div className="btn-default search">Search School</div>
@@ -546,7 +552,10 @@ console.log('State : '+this.state);
           </div>  
           <button className="btn btn-default btn-large" onClick={this.submitUpdate}>Submit</button>      
         </div>
-        
+      );
+  }
+  campUpdate(){
+      return(
         <div id="camp-update" className="recruit-update-container text-center">
           <u><h3>Recruiting Camp</h3></u>
           <input type="text"/><div className="btn-default search">Search School</div>
@@ -561,8 +570,10 @@ console.log('State : '+this.state);
           </div>
           <button className="btn btn-default btn-large" onClick={this.submitUpdate}>Submit</button>        
         </div>
-        
-        
+      );
+  }
+  workoutUpdate(){
+      return(
          <div id="workout-update" className="recruit-update-container text-center">
           <u><h3>Recruiting Workout</h3></u>
           <input type="text"/><div className="btn-default search">Search School</div>
@@ -577,8 +588,10 @@ console.log('State : '+this.state);
           </div>  
           <button className="btn btn-default btn-large" onClick={this.submitUpdate}>Submit</button>      
         </div>
-
-
+      );
+  }
+  campusUpdate(){
+      return(
          <div id="campus-update" className="recruit-update-container text-center">
           <u><h3>Campus Visit</h3></u>
           <input type="text"/><div className="btn-default search">Search School</div>
@@ -594,8 +607,10 @@ console.log('State : '+this.state);
           </div>
           <button className="btn btn-default btn-large" onClick={this.submitUpdate}>Submit</button>        
         </div>
-     
-
+      );
+  }
+  campusOfferedUpdate(){
+      return(
          <div id="offered-update" className="recruit-update-container text-center">
           <u><h3>Recruiting Offer</h3></u>
           <input type="text"/><div className="btn-default search">Search School</div>
@@ -611,6 +626,27 @@ console.log('State : '+this.state);
           </div>
           <button className="btn btn-default btn-large" onClick={this.submitUpdate}>Submit</button>        
         </div>
+      );
+  }
+
+  render() {
+      debugger;
+    return (
+        <div>
+        { this.props.currentView == 'generalInformation' ? this.generalInformation()    : ""} 
+        { this.props.currentView == 'prospectPlansFeatures' ? this.prospectPlansFeatures() : ""} 
+        { this.props.currentView == 'letterUpdate' ? this.letterUpdate() : ""} 
+        { this.props.currentView == 'textUpdate' ? this.textUpdate() : ""} 
+        { this.props.currentView == 'emailUpdate' ? this.emailUpdate() : ""} 
+        { this.props.currentView == 'callUpdate' ? this.callUpdate() : ""} 
+        { this.props.currentView == 'campUpdate' ? this.campUpdate() : ""} 
+        { this.props.currentView == 'workoutUpdate' ? this.workoutUpdate() : ""} 
+        { this.props.currentView == 'campusUpdate' ? this.campusUpdate() : ""} 
+        { this.props.currentView == 'campusOfferedUpdate' ? this.campusOfferedUpdate() : ""} 
+      
+        
+     
+
 
 
         </div>

@@ -61,6 +61,7 @@ export class Tasks extends Component {
       //debugger;
 
     const { filter } = location.query;
+    let currentView = "genInfo";
 
           //<TaskFilters filter={filter} />
     return (
@@ -68,6 +69,7 @@ export class Tasks extends Component {
         <div className="g-col">
           <TaskForm createTask={createTask} 
             {...this.props}
+            currentView={currentView} 
           />
         </div>
 
@@ -77,6 +79,8 @@ export class Tasks extends Component {
             filter={filter}
             tasks={tasks}
             updateTask={updateTask} 
+            {...this.props}
+            currentView={currentView} 
 
             />
         </div>
