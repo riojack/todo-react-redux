@@ -327,17 +327,8 @@ export class ProspectDashboard extends Component {
 	  document.getElementById("prospect-dashboard").style.display='block';
 	  window.scrollTo(0, 0);
   }
-
-  render() {
-    const { editing } = this.state;
-    const { task } = this.props;
-
-    console.log('task:'+task);
-    debugger;
-    return (
-        <div >
-              
-              
+  prospectConfirmation() {
+      return(
               <section id="prospect-confirmation" className="page">
 
                     <div className="container">
@@ -360,6 +351,11 @@ export class ProspectDashboard extends Component {
                     <button onClick={this.handleConfirmClick} className="btn btn-default btn-large center-button">View Profile</button>
                 
             </section>
+
+      );
+  }
+  prospectDashboard(){
+      return(
             <section id="prospect-dashboard" className="">
                     <div className="container">
                         <div className="row">
@@ -433,8 +429,11 @@ export class ProspectDashboard extends Component {
                 </div>
             </div>
             </section>
-            
-            
+
+      );
+  }
+  videoUpload(){
+      return(
             <section id="video-upload" className="">
                     <div className="container">
                         <div className="row">
@@ -461,7 +460,11 @@ export class ProspectDashboard extends Component {
                     </div>
                     
             </section>
-            
+      );
+  }
+  
+  marketingService(){
+      return(
              <section id="marketing-service" className="">
 					<div className="container">
 						<div className="row">
@@ -498,416 +501,444 @@ export class ProspectDashboard extends Component {
 					  </div>        
 					</div>
 			</section>
-    
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="//apis.google.com/js/client:plusone.js"></script>
-    <script src="cors_upload.js"></script>
-    <script src="upload_video.js"></script>
-    
-    //<h1> Coaches Signin</h1>
-    
-    <section id="coach-gen-info" className="page">
-       	<form onSubmit={ this.handleSubmit }>
-    		<div className="container">
-    			<div className="row">
-    				<div className="col-sm-4">
-    					<div className="timeline-image1 background-gray">
-    						<h2>1</h2>
-    					</div>
-    					<h5 className="timeline-heading1">SIGN IN</h5>
-    				</div>
-    				<div className="col-sm-4">
-    					<div className="timeline-image2 background-blue">
-    						<h2>2</h2>
-    					</div>
-    					<h5 className="timeline-heading2">GENERAL INFORMATION</h5>
-    				</div>
-    				<div className="col-sm-4">
-    					<div className="timeline-image3 background-gray">
-    						<h2>3</h2>
-    					</div>
-	    				<h5 className="timeline-heading3">BILLING</h5>
-    				</div>
-    			</div>
-    			<div className="row">
-    				<div className="col-md-offset-2 col-md-4 input-box">
-    					<div className="input-container program-info">
-    						<h4>Coach Information</h4>
-    						<div>Name<input onChange={this.handleUserInput} value={ this.state.ccNumber } /></div>
-          					<div>Position<input onChange={this.handleUserInput} value={ this.state.ccCode } /></div>
-          					<div>Email<input onChange={this.handleUserInput} value={ this.state.ccExpiration } /></div>
-          					<div>Phone Number<input onChange={this.handleUserInput} value={ this.state.ccName } /></div>
-          					<div>Head Coach Email<input onChange={this.handleUserInput} value={ this.state.ccName } /></div>
-          					<div>Head Coach Phone<input onChange={this.handleUserInput} value={ this.state.ccName } /></div>
-    					</div>
-    				</div>
-    			</div>
-    	  	</div>
-          	<button onClick={this.handleButtonClick} className="btn btn-default btn-large center-button">View Plans & Features</button>
-    	</form>
-    </section>
-    
-    
-    <section className="page">
-    	<div className="container">
-    		<div className="row">
-    			<div className="col-sm-4">
-    				<div className="timeline-image1 background-gray">
-    					<h2>1</h2>
-    				</div>
-    				<h5 className="timeline-heading1">CREATE ACCOUNT</h5>
-    			</div>
-    			<div className="col-sm-4">
-    				<div className="timeline-image2 background-gray">
-    					<h2>2</h2>
-    				</div>
-    				<h5 className="timeline-heading2">GENERAL INFORMATION</h5>
-    			</div>
-    			<div className="col-sm-4">
-    				<div className="timeline-image3 background-blue">
-    					<h2>3</h2>
-    				</div>
-	    			<h5 className="timeline-heading3">BILLING</h5>
-    			</div>
-    		</div>
-    		<div className="row">
-    			<div className="col-xs-12">
-    				<div className="text-center plans-header">
-    					<h2>Plans & Features</h2>
-    				</div>
-    			</div>
-    		</div>
-    		<div className="row">
-    		  <div className="col-md-4">
-    			<table id="coach-plans-features-table" className="text-center">
-					<thead>	  
-					  <tr id="table-header-row">
-						<th className="features">
-							<h5>Basic</h5> 
-							<div className="cost" >Free!</div> 
-							<div>Receive referrals from Clubs around the country</div>
-						</th>		
-						</tr>
-					</thead>
-					<tbody>
-					  <tr>
-						<td className="" >Receive Prospect Referrals (No Registration Required)</td>
-					  </tr>
-					</tbody>
-					
-				</table>
-    		  </div>
-    		  <div className="col-md-4">
-    			<table id="coach-plans-features-table" className="text-center">
-					
-					<thead>	  
-					  <tr id="table-header-row">
-						<th className="features">
-							<h5>Plus Membership</h5> 
-							<div className="cost" >$10/month</div>
-							<div className="cost-month" >$108/year (10% off)</div>
-							<div>Free 3 Month Trial!</div>
-						</th>
-						</tr>
-					</thead>
-					<tbody>
-					  <tr>
-						<td className="" >Receive Prospect Referrals (No Registration Required)</td>
-					  </tr>
-					  <tr>
-						<td className="" >Access our searchable database of D1, D2, D3, NAIA, JUCO prospects</td>
-					  </tr>
-					  <tr>
-						<td className="" >Access Prospect Contact, Atheltic, & Academic Information</td>
-					  </tr>
-					  <tr>
-						<td className=" background-blue" >View Prospect Recruitment Level (D1,D2,D3,NAIA,JUCO)</td>
-				      </tr>
-					  <tr>
-						<td className=" background-blue" >Request Full Game Film</td>
-					  </tr>
-					</tbody>
-					
-				</table>
-    		  </div>
-    		  <div className="col-md-4">
-    			<table id="coach-plans-features-table" className="text-center">
-					
-					<thead>	  
-					  <tr id="table-header-row">
-						<th className="features">
-							<h5>Premium Membership</h5> 
-							<div className="cost" >$20/month</div>
-							<div className="cost-month" >$216/year (10% off)</div>
-							<div>Free 3 Month Trial!</div>
-						</th>
-						</tr>
-					</thead>
-					<tbody>
-					  <tr>
-						<td className="" >Receive Prospect Referrals (No Registration Required)</td>
-					  </tr>
-					  <tr>
-						<td className="" >Access our searchable database of D1, D2, D3, NAIA, JUCO prospects</td>
-					  </tr>
-					  <tr>
-						<td className="" >Access Prospect Contact, Atheltic, & Academic Information</td>
-					  </tr>
-					  <tr>
-						<td className=" background-blue" >View Prospect Recruitment Level (D1,D2,D3,NAIA,JUCO)</td>
-				      </tr>
-					  <tr>
-						<td className=" background-blue" >Request Full Game Film</td>
-					  </tr>
-					  <tr>
-						<td className=" background-blue" >View Which Schools Have Recruited the Prospect</td>
-					  </tr>
-					  <tr>
-						<td className=" background-blue" >View How Prospects Are Being Contacted (letter, text, visit, etc)</td>
-				      </tr>
-				      
-					</tbody>
-					
-				</table>
-    		  </div>
-    		  <select id="price-plan-dropdown" style={{margin:'20px', width:'85%'}} name="price-plan" className="form-control standalone" type="select">
-					<option value="none" defaultValue>Select Price Plan</option>
-					<option value="basic">Basic - Free</option>
-					<option value="plus">Plus - $10/month</option>
-					<option value="plus">Plus - $108/year(10% off)</option>
-					<option value="Premium">Premium - $20/month</option>
-					<option value="Premium">Premium - $216/year(10% off)</option>
-				</select>
-    		  
-    		</div>
-    	</div>
-    	
-        <form className="text-center" onSubmit={ this.handleSubmit }>
-        
-          	<a onClick={this.handleButtonClick} className="btn btn-default btn-large">Complete Registration</a>
-       
-        </form>
-      </section>
-      
-      <section id="coach-confirmation" className="page">
-       	<form onSubmit={ this.handleSubmit }>
-    		<div className="container">
-    			<div className="row">
-    				<div className="col-sm-12">
-    					<h3 className="text-center" >You have successfully created your college coach account!
-    					</h3>
-    				</div>
-    				<div className="col-md-4 input-box">
-    					<div id="gender-info" className="input-container">
-    						<h4>Coach Verification</h4>
-    						<div>IN ORDER TO VERIFY YOUR EMAIL ADDRESS AS A
-								COLLEGE COACH, PLEASE MAKE SURE THE EMAIL
-								ADDRESS SEEN BELOW IS CORRECT SO WE CAN
-								SEND AN EMAIL TO VERIFY IT IS A UNIVERSITY
-								EMAIL.</div>
-							<h4>task.coachesEmail</h4>
-          				</div>
-    				</div>
-					<div>    					
-    					<p>Please visit your dashboard and use our service to search and follow prospects 
-    					in our database. This platform is intended to help your coaching staff discover new prospects and gain more information on prospects you already follow. </p>													
-						<p>We will email a bill corresponding to your chosen pricing plan in the next 3-5 days.</p>
-                        <p>Thank you for choosing Prospect Source!</p>
-    				</div>
-    			</div>
-    	  	</div>
-          	<button onClick={this.handleButtonClick} className="btn btn-default btn-large center-button">View Profile</button>
-    	</form>
-    </section>
-    
-    <h1> Coaches Dashboard</h1>
-    
-    
-    <section id="profile" className="page">
-    	<div className="container">
-    		<div id="profile-top-row" className="row profile-top-row">
-    			<div className="col-sm-3">
-    				<div id="club-logo" className="background-blue">
-    					<h5>{task.aauProgram}</h5>
-    				</div>
-    			</div>
-    			<div className="col-sm-6">
-    				<div id="" className="">
-    					<div id="profile-basics">
-							<h3>{ task.firstName}  {task.lastName} ({ task.gradeClass })</h3>
-							<div><h4>Position:</h4>  { task.position}</div>
-							<div><h4>Height:</h4>  { task.height}</div>
-							<div><h4>State:</h4>  { task.stateAthlete}</div>
-						</div>
-    				</div>
-    			</div>
-    		</div>
-    		<div className="row">
-    			<div className="col-sm-3">
-    				<div id="" className="data-cat-btn background-gray" onClick={this.handleContactClick}>
-    					<h5>Contact Information</h5>
-    				</div>
-    				<div id="" className="data-cat-btn background-gray" onClick={this.handleAthleticClick}>
-    					<h5>Athletic Information</h5>
-    				</div>
-    				<div id="" className="data-cat-btn background-gray" onClick={this.handleAcademicClick}>
-    					<h5>Academic Information</h5>
-    				</div>
-    				<div id="" className="data-cat-btn background-blue" onClick={this.handleRecruitingClick}>
-    					<h5>Recruiting Interest</h5>
-    				</div>
-    				<div id="" className="data-cat-btn background-gray" onClick={this.backToDashboard} >
-    					<h5>Back To Dashboard</h5>
-    				</div>
-    			</div>
-    			<div id="athlete-info-container" className="col-sm-9">
-      				<div>
-			      		<div id="profile-contact-info">
-							<h3>Contact Information</h3>
-							<div><h4>Phone:</h4>  { task.phoneAthlete}</div>
-							<div><h4>Email:</h4>  { task.emailAthlete}</div>
-							<div><h4>AAU Coach Name:</h4>  { task.aauCoachName}</div>
-							<div><h4>AAU Coach Email:</h4>    { task.aauCoachEmail}</div>
-							<div><h4>AAU Coach Phone:</h4>    { task.aauCoachPhone}</div>
-							<div><h4>HS Coach Name:</h4>     {task.hsCoachName}</div>
-							<div><h4>HS Coach Email:</h4>    { task.hsCoachEmail}</div>
-						</div>
-						<div id="profile-athletic-info">
-							<h3>Athletic Information</h3>
-							<div><h4>Grade/Class:</h4>  { task.gradeClass}</div>
-							<div><h4>Height:</h4>  { task.height}</div>
-							<div><h4>Weight:</h4>  { task.weight}</div>
-							<div><h4>Vertical Jump:</h4>    { task.vertJump}</div>
-							<div><h4>Position:</h4>    { task.position}</div>
-							<div><h4>AAU Program:</h4>     {task.aauProgram}</div>
-							<div><h4>AAU Jersey:</h4>    { task.aauJersey}</div>
-							<div><h4>High School:</h4>    { task.highSchool}</div>
-							<div><h4>HUDL Profile:</h4>    { task.hudlProfile}</div>
-						</div>
-						<div id="profile-academic-info">
-							<h3>Academic Information</h3>
-							<div><h4>GPA:</h4>  { task.gpa}</div>
-							<div><h4>ACT:</h4>  { task.act}</div>
-							<div><h4>Class Rank:</h4>  { task.classRank}</div>
-						</div>
-						<div id="player-recruiting-interest" className="">
-    					
-							<ul className="prospect-categories list-inline">
-								<li className="cat-btn background-blue">D1</li>
-								<li className="cat-btn background-blue">D2</li>
-								<li className="cat-btn background-blue">D3</li>
-								<li className="cat-btn background-blue">NAIA</li>
-								<li className="cat-btn background-blue">JUCO</li>
-							</ul>
-							<h2 id="prospect-interest" className="text-center" >Recruiting Interest</h2>
-							<div id="recruiting-interest-cats">   
-								<ul>
-									<li className="btn btn-default">High Major</li>
-									<li className="btn btn-default">High Major - / Mid-Major +</li>
-									<li className="btn btn-default">Mid-Major</li>
-									<li className="btn btn-default">Mid-Major - / Low Major +</li>
-									<li className="btn btn-default">Low Major</li>
-								</ul>						
-							</div>
-							<div id="recruiting-activity-feed" >
-								<ul className="prospect-activity background-light-gray list-inline" onClick={this.handleSummaryClick}>
-									<li className="prospect-update">Southwest Minnesota</li>
-								</ul>
-							</div>
-    					
-    					</div>
-			      	</div>	
-      			</div>
-      		</div>
-      	</div>
-      	
-      </section> 
-      
-      
-      
-      
-      <section className="">
-    		<div className="container">
-    			<div className="row">
-    				<div className="col-sm-3">
-    					<div className="panel-container">
-    						<div id="program-name" ><h5>School Name</h5></div>
-    						<div id="" className="data-cat-btn background-gray">
-    							<h5>Dashboard</h5>
-							</div>
-    						<div className="panel-cat-name">
-    							<h5>Edit Information</h5>
-    						</div>
-    						<div id="" className="data-cat-btn background-gray" onClick={this.handleContactClick}>
-    							<h5>School Information</h5>
-							</div>
-							<div id="" className="data-cat-btn background-gray" onClick={this.handleContactClick}>
-								<h5>Coach Information</h5>
-							</div>
-							<div className="panel-cat-name">
-								<h5>Recruiting Feeds</h5>
-							</div>
-							<div id="" className="data-cat-btn background-blue" onClick={this.handleContactClick}>
-								<h5>D1 Recruiting</h5>
-							</div>
-							<div id="" className="data-cat-btn background-blue" onClick={this.handleContactClick}>
-								<h5>D2 Recruiting</h5>
-							</div>
-							<div id="" className="data-cat-btn background-blue" onClick={this.handleContactClick}>
-								<h5>D3 Recruiting</h5>
-							</div>
-							<div id="" className="data-cat-btn background-blue" onClick={this.handleContactClick}>
-								<h5>NAIA Recruiting</h5>
-							</div>
-							<div id="" className="data-cat-btn background-blue" onClick={this.handleContactClick}>
-								<h5>JUCO Recruiting</h5>
-							</div>
-						</div>    				
-    				</div>
-    				<div className="col-sm-9">
-    					<div className="prospect-container">
-    						<h2 id="" className="text-center" >Prospect Source Recruits</h2>
-    						<ul className="recruiting-feed-categories list-inline">
-    							<li className="cat-btn background-blue">Level</li>
-    							<li className="cat-btn background-blue">Class</li>
-    							<li className="cat-btn background-blue">State</li>
-    							<li className="cat-btn background-blue">Position</li>
-    							<li className="cat-btn background-blue">ACT</li>
-    							<li className="cat-btn background-blue">GPA</li>    							
-    						</ul>
-    						<li >
-							  <div id="all-prospects-container" className="prospect-summary background-light-gray ">
-									<ul id="all-prospects" className=" ">
-										<li className="prospect-feed">{task.firstName} {task.lastName} ({task.gradeClass}/{task.position})</li>
-										<li className="prospect-feed">{task.stateAthlete}</li>
-										<li className="prospect-feed">{task.aauProgram}</li>
-									</ul>
-									<ul id="prospect-divisions" className=" ">
-										<li>
-											<div className="highlight-box"></div><p className="text-center">D1</p>
-										</li>
-										<li>
-											<div className="highlight-box"></div><p className="text-center">D2</p>
-										</li>
-										<li>
-											<div className="highlight-box"></div><p className="text-center">D3</p>
-										</li>
-										<li>
-											<div className="highlight-box"></div><p className="text-center">NAIA</p>
-										</li>
-										<li>
-											<div className="highlight-box"></div><p className="text-center">JUCO</p>
-										</li>
-									</ul>
-								<div className="profile-link-button text-center background-gray">Profile</div>
-							  </div>
-							</li>
-    					</div>
-    				</div>
-    			</div>
-    	  	</div>
-    </section>
-      
+
+      );
+  }
+  coachGenInfo(){
+      return(
+        <section id="coach-gen-info" className="page">
+            <form onSubmit={ this.handleSubmit }>
+                <div className="container">
+                    <div className="row">
+                        <div className="col-sm-4">
+                            <div className="timeline-image1 background-gray">
+                                <h2>1</h2>
+                            </div>
+                            <h5 className="timeline-heading1">SIGN IN</h5>
+                        </div>
+                        <div className="col-sm-4">
+                            <div className="timeline-image2 background-blue">
+                                <h2>2</h2>
+                            </div>
+                            <h5 className="timeline-heading2">GENERAL INFORMATION</h5>
+                        </div>
+                        <div className="col-sm-4">
+                            <div className="timeline-image3 background-gray">
+                                <h2>3</h2>
+                            </div>
+                            <h5 className="timeline-heading3">BILLING</h5>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col-md-offset-2 col-md-4 input-box">
+                            <div className="input-container program-info">
+                                <h4>Coach Information</h4>
+                                <div>Name<input onChange={this.handleUserInput} value={ this.state.ccNumber } /></div>
+                                <div>Position<input onChange={this.handleUserInput} value={ this.state.ccCode } /></div>
+                                <div>Email<input onChange={this.handleUserInput} value={ this.state.ccExpiration } /></div>
+                                <div>Phone Number<input onChange={this.handleUserInput} value={ this.state.ccName } /></div>
+                                <div>Head Coach Email<input onChange={this.handleUserInput} value={ this.state.ccName } /></div>
+                                <div>Head Coach Phone<input onChange={this.handleUserInput} value={ this.state.ccName } /></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button onClick={this.handleButtonClick} className="btn btn-default btn-large center-button">View Plans & Features</button>
+            </form>
+        </section>
+      );
+  }
+  coachPlansFeatures(){
+      return(
+        <section className="page">
+            <div className="container">
+                <div className="row">
+                    <div className="col-sm-4">
+                        <div className="timeline-image1 background-gray">
+                            <h2>1</h2>
+                        </div>
+                        <h5 className="timeline-heading1">CREATE ACCOUNT</h5>
+                    </div>
+                    <div className="col-sm-4">
+                        <div className="timeline-image2 background-gray">
+                            <h2>2</h2>
+                        </div>
+                        <h5 className="timeline-heading2">GENERAL INFORMATION</h5>
+                    </div>
+                    <div className="col-sm-4">
+                        <div className="timeline-image3 background-blue">
+                            <h2>3</h2>
+                        </div>
+                        <h5 className="timeline-heading3">BILLING</h5>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col-xs-12">
+                        <div className="text-center plans-header">
+                            <h2>Plans & Features</h2>
+                        </div>
+                    </div>
+                </div>
+                <div className="row">
+                  <div className="col-md-4">
+                    <table id="coach-plans-features-table" className="text-center">
+                        <thead>	  
+                          <tr id="table-header-row">
+                            <th className="features">
+                                <h5>Basic</h5> 
+                                <div className="cost" >Free!</div> 
+                                <div>Receive referrals from Clubs around the country</div>
+                            </th>		
+                            </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td className="" >Receive Prospect Referrals (No Registration Required)</td>
+                          </tr>
+                        </tbody>
+                        
+                    </table>
+                  </div>
+                  <div className="col-md-4">
+                    <table id="coach-plans-features-table" className="text-center">
+                        
+                        <thead>	  
+                          <tr id="table-header-row">
+                            <th className="features">
+                                <h5>Plus Membership</h5> 
+                                <div className="cost" >$10/month</div>
+                                <div className="cost-month" >$108/year (10% off)</div>
+                                <div>Free 3 Month Trial!</div>
+                            </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td className="" >Receive Prospect Referrals (No Registration Required)</td>
+                          </tr>
+                          <tr>
+                            <td className="" >Access our searchable database of D1, D2, D3, NAIA, JUCO prospects</td>
+                          </tr>
+                          <tr>
+                            <td className="" >Access Prospect Contact, Atheltic, & Academic Information</td>
+                          </tr>
+                          <tr>
+                            <td className=" background-blue" >View Prospect Recruitment Level (D1,D2,D3,NAIA,JUCO)</td>
+                          </tr>
+                          <tr>
+                            <td className=" background-blue" >Request Full Game Film</td>
+                          </tr>
+                        </tbody>
+                        
+                    </table>
+                  </div>
+                  <div className="col-md-4">
+                    <table id="coach-plans-features-table" className="text-center">
+                        
+                        <thead>	  
+                          <tr id="table-header-row">
+                            <th className="features">
+                                <h5>Premium Membership</h5> 
+                                <div className="cost" >$20/month</div>
+                                <div className="cost-month" >$216/year (10% off)</div>
+                                <div>Free 3 Month Trial!</div>
+                            </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td className="" >Receive Prospect Referrals (No Registration Required)</td>
+                          </tr>
+                          <tr>
+                            <td className="" >Access our searchable database of D1, D2, D3, NAIA, JUCO prospects</td>
+                          </tr>
+                          <tr>
+                            <td className="" >Access Prospect Contact, Atheltic, & Academic Information</td>
+                          </tr>
+                          <tr>
+                            <td className=" background-blue" >View Prospect Recruitment Level (D1,D2,D3,NAIA,JUCO)</td>
+                          </tr>
+                          <tr>
+                            <td className=" background-blue" >Request Full Game Film</td>
+                          </tr>
+                          <tr>
+                            <td className=" background-blue" >View Which Schools Have Recruited the Prospect</td>
+                          </tr>
+                          <tr>
+                            <td className=" background-blue" >View How Prospects Are Being Contacted (letter, text, visit, etc)</td>
+                          </tr>
+                          
+                        </tbody>
+                        
+                    </table>
+                  </div>
+                  <select id="price-plan-dropdown" style={{margin:'20px', width:'85%'}} name="price-plan" className="form-control standalone" type="select">
+                        <option value="none" defaultValue>Select Price Plan</option>
+                        <option value="basic">Basic - Free</option>
+                        <option value="plus">Plus - $10/month</option>
+                        <option value="plus">Plus - $108/year(10% off)</option>
+                        <option value="Premium">Premium - $20/month</option>
+                        <option value="Premium">Premium - $216/year(10% off)</option>
+                    </select>
+                  
+                </div>
+            </div>
+            
+            <form className="text-center" onSubmit={ this.handleSubmit }>
+            
+                <a onClick={this.handleButtonClick} className="btn btn-default btn-large">Complete Registration</a>
+           
+            </form>
+          </section>
+
+      );
+  }
+  coachConfirmation(){
+      return(
+          <section id="coach-confirmation" className="page">
+            <form onSubmit={ this.handleSubmit }>
+                <div className="container">
+                    <div className="row">
+                        <div className="col-sm-12">
+                            <h3 className="text-center" >You have successfully created your college coach account!
+                            </h3>
+                        </div>
+                        <div className="col-md-4 input-box">
+                            <div id="gender-info" className="input-container">
+                                <h4>Coach Verification</h4>
+                                <div>IN ORDER TO VERIFY YOUR EMAIL ADDRESS AS A
+                                    COLLEGE COACH, PLEASE MAKE SURE THE EMAIL
+                                    ADDRESS SEEN BELOW IS CORRECT SO WE CAN
+                                    SEND AN EMAIL TO VERIFY IT IS A UNIVERSITY
+                                    EMAIL.</div>
+                                <h4>task.coachesEmail</h4>
+                            </div>
+                        </div>
+                        <div>    					
+                            <p>Please visit your dashboard and use our service to search and follow prospects 
+                            in our database. This platform is intended to help your coaching staff discover new prospects and gain more information on prospects you already follow. </p>													
+                            <p>We will email a bill corresponding to your chosen pricing plan in the next 3-5 days.</p>
+                            <p>Thank you for choosing Prospect Source!</p>
+                        </div>
+                    </div>
+                </div>
+                <button onClick={this.handleButtonClick} className="btn btn-default btn-large center-button">View Profile</button>
+            </form>
+        </section>
+
+      );
+  }
+  profile(){
+      return(
+        <section id="profile" className="page">
+            <div className="container">
+                <div id="profile-top-row" className="row profile-top-row">
+                    <div className="col-sm-3">
+                        <div id="club-logo" className="background-blue">
+                            <h5>{task.aauProgram}</h5>
+                        </div>
+                    </div>
+                    <div className="col-sm-6">
+                        <div id="" className="">
+                            <div id="profile-basics">
+                                <h3>{ task.firstName}  {task.lastName} ({ task.gradeClass })</h3>
+                                <div><h4>Position:</h4>  { task.position}</div>
+                                <div><h4>Height:</h4>  { task.height}</div>
+                                <div><h4>State:</h4>  { task.stateAthlete}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col-sm-3">
+                        <div id="" className="data-cat-btn background-gray" onClick={this.handleContactClick}>
+                            <h5>Contact Information</h5>
+                        </div>
+                        <div id="" className="data-cat-btn background-gray" onClick={this.handleAthleticClick}>
+                            <h5>Athletic Information</h5>
+                        </div>
+                        <div id="" className="data-cat-btn background-gray" onClick={this.handleAcademicClick}>
+                            <h5>Academic Information</h5>
+                        </div>
+                        <div id="" className="data-cat-btn background-blue" onClick={this.handleRecruitingClick}>
+                            <h5>Recruiting Interest</h5>
+                        </div>
+                        <div id="" className="data-cat-btn background-gray" onClick={this.backToDashboard} >
+                            <h5>Back To Dashboard</h5>
+                        </div>
+                    </div>
+                    <div id="athlete-info-container" className="col-sm-9">
+                        <div>
+                            <div id="profile-contact-info">
+                                <h3>Contact Information</h3>
+                                <div><h4>Phone:</h4>  { task.phoneAthlete}</div>
+                                <div><h4>Email:</h4>  { task.emailAthlete}</div>
+                                <div><h4>AAU Coach Name:</h4>  { task.aauCoachName}</div>
+                                <div><h4>AAU Coach Email:</h4>    { task.aauCoachEmail}</div>
+                                <div><h4>AAU Coach Phone:</h4>    { task.aauCoachPhone}</div>
+                                <div><h4>HS Coach Name:</h4>     {task.hsCoachName}</div>
+                                <div><h4>HS Coach Email:</h4>    { task.hsCoachEmail}</div>
+                            </div>
+                            <div id="profile-athletic-info">
+                                <h3>Athletic Information</h3>
+                                <div><h4>Grade/Class:</h4>  { task.gradeClass}</div>
+                                <div><h4>Height:</h4>  { task.height}</div>
+                                <div><h4>Weight:</h4>  { task.weight}</div>
+                                <div><h4>Vertical Jump:</h4>    { task.vertJump}</div>
+                                <div><h4>Position:</h4>    { task.position}</div>
+                                <div><h4>AAU Program:</h4>     {task.aauProgram}</div>
+                                <div><h4>AAU Jersey:</h4>    { task.aauJersey}</div>
+                                <div><h4>High School:</h4>    { task.highSchool}</div>
+                                <div><h4>HUDL Profile:</h4>    { task.hudlProfile}</div>
+                            </div>
+                            <div id="profile-academic-info">
+                                <h3>Academic Information</h3>
+                                <div><h4>GPA:</h4>  { task.gpa}</div>
+                                <div><h4>ACT:</h4>  { task.act}</div>
+                                <div><h4>Class Rank:</h4>  { task.classRank}</div>
+                            </div>
+                            <div id="player-recruiting-interest" className="">
+                            
+                                <ul className="prospect-categories list-inline">
+                                    <li className="cat-btn background-blue">D1</li>
+                                    <li className="cat-btn background-blue">D2</li>
+                                    <li className="cat-btn background-blue">D3</li>
+                                    <li className="cat-btn background-blue">NAIA</li>
+                                    <li className="cat-btn background-blue">JUCO</li>
+                                </ul>
+                                <h2 id="prospect-interest" className="text-center" >Recruiting Interest</h2>
+                                <div id="recruiting-interest-cats">   
+                                    <ul>
+                                        <li className="btn btn-default">High Major</li>
+                                        <li className="btn btn-default">High Major - / Mid-Major +</li>
+                                        <li className="btn btn-default">Mid-Major</li>
+                                        <li className="btn btn-default">Mid-Major - / Low Major +</li>
+                                        <li className="btn btn-default">Low Major</li>
+                                    </ul>						
+                                </div>
+                                <div id="recruiting-activity-feed" >
+                                    <ul className="prospect-activity background-light-gray list-inline" onClick={this.handleSummaryClick}>
+                                        <li className="prospect-update">Southwest Minnesota</li>
+                                    </ul>
+                                </div>
+                            
+                            </div>
+                        </div>	
+                    </div>
+                </div>
+            </div>
+            
+          </section> 
+
+      );
+  }
+  prospectReport(){
+      return(
+          <section className="prospect-report">
+                <div className="container">
+                    <div className="row">
+                        <div className="col-sm-3">
+                            <div className="panel-container">
+                                <div id="program-name" ><h5>School Name</h5></div>
+                                <div id="" className="data-cat-btn background-gray">
+                                    <h5>Dashboard</h5>
+                                </div>
+                                <div className="panel-cat-name">
+                                    <h5>Edit Information</h5>
+                                </div>
+                                <div id="" className="data-cat-btn background-gray" onClick={this.handleContactClick}>
+                                    <h5>School Information</h5>
+                                </div>
+                                <div id="" className="data-cat-btn background-gray" onClick={this.handleContactClick}>
+                                    <h5>Coach Information</h5>
+                                </div>
+                                <div className="panel-cat-name">
+                                    <h5>Recruiting Feeds</h5>
+                                </div>
+                                <div id="" className="data-cat-btn background-blue" onClick={this.handleContactClick}>
+                                    <h5>D1 Recruiting</h5>
+                                </div>
+                                <div id="" className="data-cat-btn background-blue" onClick={this.handleContactClick}>
+                                    <h5>D2 Recruiting</h5>
+                                </div>
+                                <div id="" className="data-cat-btn background-blue" onClick={this.handleContactClick}>
+                                    <h5>D3 Recruiting</h5>
+                                </div>
+                                <div id="" className="data-cat-btn background-blue" onClick={this.handleContactClick}>
+                                    <h5>NAIA Recruiting</h5>
+                                </div>
+                                <div id="" className="data-cat-btn background-blue" onClick={this.handleContactClick}>
+                                    <h5>JUCO Recruiting</h5>
+                                </div>
+                            </div>    				
+                        </div>
+                        <div className="col-sm-9">
+                            <div className="prospect-container">
+                                <h2 id="" className="text-center" >Prospect Source Recruits</h2>
+                                <ul className="recruiting-feed-categories list-inline">
+                                    <li className="cat-btn background-blue">Level</li>
+                                    <li className="cat-btn background-blue">Class</li>
+                                    <li className="cat-btn background-blue">State</li>
+                                    <li className="cat-btn background-blue">Position</li>
+                                    <li className="cat-btn background-blue">ACT</li>
+                                    <li className="cat-btn background-blue">GPA</li>    							
+                                </ul>
+                                <li >
+                                  <div id="all-prospects-container" className="prospect-summary background-light-gray ">
+                                        <ul id="all-prospects" className=" ">
+                                            <li className="prospect-feed">{task.firstName} {task.lastName} ({task.gradeClass}/{task.position})</li>
+                                            <li className="prospect-feed">{task.stateAthlete}</li>
+                                            <li className="prospect-feed">{task.aauProgram}</li>
+                                        </ul>
+                                        <ul id="prospect-divisions" className=" ">
+                                            <li>
+                                                <div className="highlight-box"></div><p className="text-center">D1</p>
+                                            </li>
+                                            <li>
+                                                <div className="highlight-box"></div><p className="text-center">D2</p>
+                                            </li>
+                                            <li>
+                                                <div className="highlight-box"></div><p className="text-center">D3</p>
+                                            </li>
+                                            <li>
+                                                <div className="highlight-box"></div><p className="text-center">NAIA</p>
+                                            </li>
+                                            <li>
+                                                <div className="highlight-box"></div><p className="text-center">JUCO</p>
+                                            </li>
+                                        </ul>
+                                    <div className="profile-link-button text-center background-gray">Profile</div>
+                                  </div>
+                                </li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+      );
+  }
+
+  render() {
+    const { editing } = this.state;
+    const { task } = this.props;
+
+    console.log('task:'+task);
+    debugger;
+    return (
+        <div >
+                
+        { this.props.currentView == 'prospectConfirmation'  ? this.prospectConfirmation()    : ""} 
+        { this.props.currentView == 'prospectDashboard'     ? this.prospectDashboard()       : ""} 
+        { this.props.currentView == 'videoUpload'           ? this.videoUpload()             : ""} 
+        { this.props.currentView == 'marketingService'      ? this.marketingService()        : ""} 
+        { this.props.currentView == 'coachGenInfo'          ? this.coachGenInfo()            : ""} 
+        { this.props.currentView == 'coachGenInfo'          ? this.coachGenInfo()            : ""} 
+        { this.props.currentView == 'coachPlansFeatures'    ? this.coachPlansFeatures()      : ""} 
+        { this.props.currentView == 'coachConfirmation'     ? this.coachConfirmation()       : ""} 
+        { this.props.currentView == 'profile'               ? this.profile()                 : ""} 
+        { this.props.currentView == 'prospectReport'        ? this.prospectReport()          : ""} 
+              
        
        </div>
     );

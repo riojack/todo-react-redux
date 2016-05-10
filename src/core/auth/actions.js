@@ -51,7 +51,8 @@ export function signInWithGoogle() {
 }
 
 
-export function signInWithTwitter() {
+export function signInWithTwitter(prospectCoach, a, b, c, d) {
+    debugger;
   return authenticate('twitter');
 }
 export function signInWithFacebook() {

@@ -61,7 +61,8 @@ export class Tasks extends Component {
       //debugger;
 
     const { filter } = location.query;
-    let currentView = "genInfo";
+    let currentView = "generalInformation";
+    let playerCoach = "";
 
           //<TaskFilters filter={filter} />
     return (

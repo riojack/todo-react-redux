@@ -145,6 +145,7 @@ console.log('State : '+this.state);
      
                   //value={tasks.length && tasks[0][objRef] != "" && tasks[0][objRef] == this.state[objRef]  ? tasks[0][objRef] : ""}
     prospectPlansFeatures(){
+        return(
         <section id="prospect-plans-features" className="page">
             <form className="text-center" >
             <div className="container">
@@ -349,6 +350,7 @@ console.log('State : '+this.state);
            
             </form>
           </section>
+        );
 
     }
     generalInformation(){
@@ -386,7 +388,8 @@ console.log('State : '+this.state);
                   27:{ ref:'classRank',     display: 'Class Rank'        },
               }
           };
-      return(<section id="general-info" className="page">
+      return(
+          <section id="general-info" className="page">
         <form onSubmit={ this.handleSubmit }>
     	<div className="container">
     		<div className="row">
@@ -630,25 +633,18 @@ console.log('State : '+this.state);
   }
 
   render() {
-      debugger;
     return (
         <div>
-        { this.props.currentView == 'generalInformation' ? this.generalInformation()    : ""} 
-        { this.props.currentView == 'prospectPlansFeatures' ? this.prospectPlansFeatures() : ""} 
-        { this.props.currentView == 'letterUpdate' ? this.letterUpdate() : ""} 
-        { this.props.currentView == 'textUpdate' ? this.textUpdate() : ""} 
-        { this.props.currentView == 'emailUpdate' ? this.emailUpdate() : ""} 
-        { this.props.currentView == 'callUpdate' ? this.callUpdate() : ""} 
-        { this.props.currentView == 'campUpdate' ? this.campUpdate() : ""} 
-        { this.props.currentView == 'workoutUpdate' ? this.workoutUpdate() : ""} 
-        { this.props.currentView == 'campusUpdate' ? this.campusUpdate() : ""} 
-        { this.props.currentView == 'campusOfferedUpdate' ? this.campusOfferedUpdate() : ""} 
-      
-        
-     
-
-
-
+            { this.props.currentView == 'generalInformation'    ? this.generalInformation()    : ""} 
+            { this.props.currentView == 'prospectPlansFeatures' ? this.prospectPlansFeatures() : ""} 
+            { this.props.currentView == 'letterUpdate'          ? this.letterUpdate() : ""} 
+            { this.props.currentView == 'textUpdate'            ? this.textUpdate() : ""} 
+            { this.props.currentView == 'emailUpdate'           ? this.emailUpdate() : ""} 
+            { this.props.currentView == 'callUpdate'            ? this.callUpdate() : ""} 
+            { this.props.currentView == 'campUpdate'            ? this.campUpdate() : ""} 
+            { this.props.currentView == 'workoutUpdate'         ? this.workoutUpdate() : ""} 
+            { this.props.currentView == 'campusUpdate'          ? this.campusUpdate() : ""} 
+            { this.props.currentView == 'campusOfferedUpdate'   ? this.campusOfferedUpdate() : ""} 
         </div>
     );
   }

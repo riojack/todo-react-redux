@@ -32,7 +32,7 @@ export class SignIn extends Component {
                           <h3 className="sign-in__heading ">Sign In</h3>
 
                           <button onClick={signInWithFacebook} className="btn btn-default btn-large center-button">Facebook</button>
-                          <button onClick={signInWithGoogle} className="btn btn-default btn-large center-button">Google</button>
+                          <button onClick={signInWithGoogle} value='prospect' className="btn btn-default btn-large center-button">Google</button>
                           <button onClick={signInWithTwitter} className="btn btn-default btn-large center-button">Twitter</button>
                         </div>
                       </div>
