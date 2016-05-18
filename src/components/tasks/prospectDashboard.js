@@ -132,7 +132,7 @@ export class ProspectDashboard extends Component {
     							<li className="cat-btn background-blue"><input type="checkbox"  />NAIA</li>
     							<li className="cat-btn background-blue"><input type="checkbox"  />JUCO</li>
     						</ul>
-    						<h2 id="prospect-interest" className="text-center" >Recruiting Interest</h2>
+    						<h2 id="" className="text-center prospect-interest" >Recruiting Interest</h2>
 							<div id="recruiting-tracking">    						
 								<div className="row">
 									<div className="col-sm-4 recruiting-tracking-btn background-blue"  style={divStyle}><h5>RECEIVED</h5><h5>A LETTER</h5></div>
@@ -219,11 +219,13 @@ export class ProspectDashboard extends Component {
 	document.getElementById('player-d3-recruiting-summary').style.display='none';
 	document.getElementById('player-d4-recruiting-summary').style.display='none';
 	document.getElementById('player-d5-recruiting-summary').style.display='none';
+    document.getElementById('player-recruiting-summaries').style.display='none';
   }
    
    handleSummaryClick() {
     document.getElementById('prospect-updates-container').style.display='none';
     document.getElementById('player-d1-recruiting-summary').style.display='block';
+    document.getElementById('player-recruiting-summaries').style.display='block';
   }
   
   		handleD1SummaryClick() {
@@ -463,182 +465,189 @@ export class ProspectDashboard extends Component {
         <div >
               
               
-              <section id="prospect-confirmation" className="page">
+			<section id="prospect-confirmation" className="page">
 
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-sm-12">
-                                <h3 className="text-center" >You have successfully created your prospect profile!</h3>
-                                <p>Now that you have created your profile, you will be entered into our master 
-                                prospect database. This database is searched by coaches of all levels.</p>
-                                <p>In order to increase your chance of appearing in database searches, please 
-                                add recruiting interest to your profile. Once you are on the dashboard, you will
-                                 be able to let everyone know who is currently recruiting you. </p>
-                                <p>In addition to adding recruiting interest to your profile, you can order 
-                                premium video and marketing service to get your information in front of more 
-                                coaches.</p>
-                                <p>We will email a bill corresponding to your chosen pricing plan in the next 3-5 days.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <button onClick={this.handleConfirmClick} className="btn btn-default btn-large center-button">View Profile</button>
-                
-            </section>
+				<div className="container">
+					<div className="row">
+						<div className="col-sm-12">
+							<h3 className="text-center" >You have successfully created your prospect profile!</h3>
+							<p>Now that you have created your profile, you will be entered into our master 
+							prospect database. This database is searched by coaches of all levels.</p>
+							<p>In order to increase your chance of appearing in database searches, please 
+							add recruiting interest to your profile. Once you are on the dashboard, you will
+							 be able to let everyone know who is currently recruiting you. </p>
+							<p>In addition to adding recruiting interest to your profile, you can order 
+							premium video and marketing service to get your information in front of more 
+							coaches.</p>
+							<p>We will email a bill corresponding to your chosen pricing plan in the next 3-5 days.
+							</p>
+						</div>
+					</div>
+				</div>
+				<button onClick={this.handleConfirmClick} className="btn btn-default btn-large center-button">View Profile</button>
+		
+			</section>
+            
+            
             <section id="prospect-dashboard" className="">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-sm-3">
-                                <div className="panel-container">
-                                    <div id="program-name" ><h5>{task.firstName} {task.lastName}</h5></div>
-                                    <div id="" className="data-cat-btn background-gray" onClick={this.handleDashboardClick}>
-                                        <h5>Dashboard</h5>
-                                    </div>
-                                    <div id="" className="data-cat-btn background-gray" onClick={this.handleSummaryClick}>
-                                        <h5>Summary</h5>
-                                    </div>
-                                    <div className="panel-cat-name">
-                                        <h5>Edit Profile</h5>
-                                    </div>
-                                    <div id="" className="data-cat-btn background-gray" onClick={this.handleEditProfileClick}>
-                                        <h5>Prospect Information</h5>
-                                    </div>
-                                    <div id="" className="data-cat-btn background-gray" onClick={this.handleEditPricingPlanClick}>
-                                        <h5>Pricing Plan</h5>
-                                    </div>
-                    
-                                    <div className="panel-cat-name">
-                                        <h5>Premium Service</h5>
-                                    </div>
-                                    <div id="" className="data-cat-btn background-gray" onClick={this.handleVideoServiceClick.bind(this)}>
-                                        <h5>Video Service</h5>
-                                    </div>
-                                    <div id="" className="data-cat-btn background-gray" onClick={this.handleMarketingServiceClick.bind(this)}>
-                                        <h5>Marketing Service</h5>
-                                    </div>
-                                </div>    				
-                            </div>
-                    <div className="col-sm-9">
-                        <div><u><h5 id="prospect-clubname">{task.pricePlan}</h5></u><u><h5 onClick={this.coachesView} id="prospect-coach-view" className="text-right">View What Coaches See</h5></u></div>
-                        
-                        <div className="registered-prospect-container">
-                        	 
-								<ul className="prospect-categories list-inline">
-									<li className="cat-btn background-blue" onClick={this.handleD1SummaryClick}>D1</li>
-									<li className="cat-btn background-blue" onClick={this.handleD2SummaryClick}>D2</li>
-									<li className="cat-btn " onClick={this.handleD3SummaryClick}>D3</li>
-									<li className="cat-btn " onClick={this.handleD4SummaryClick}>NAIA</li>
-									<li className="cat-btn " onClick={this.handleD5SummaryClick}>JUCO</li>
-								</ul>
-							<div id="prospect-updates-container">
-								<h2 id="prospect-interest" className="text-center" >Recruiting Interest</h2>
-								<p id="prospect-interest-caption" className="text-center background-light-gray">Build your profile by tracking which schools are recruiting you!</p>
-								<div id="recruiting-tracking">    						
-									<div className="row">
-										<div className="col-sm-4 recruiting-tracking-btn background-blue" onClick={this.handleLetterClick}><p>RECEIVED A LETTER</p></div>
-										<div className="col-sm-4 recruiting-tracking-btn background-blue" onClick={this.handleTextClick}><p>RECEIVED A TEXT</p></div>
-										<div className="col-sm-4 recruiting-tracking-btn background-blue" onClick={this.handleEmailClick}><p>RECEIVED AN EMAIL</p></div>
-									</div>
-									<div className="row">
-										<div className="col-sm-4 recruiting-tracking-btn background-blue" onClick={this.handleCallClick}><p>RECEIVED A PHONE CALL</p></div>
-										<div className="col-sm-4 recruiting-tracking-btn background-blue" onClick={this.handleCampClick}><p>WAS INVITED TO A CAMP</p></div>
-										<div className="col-sm-4 recruiting-tracking-btn background-blue" onClick={this.handleWorkoutClick}><p>HAD A PRIVATE WORKOUT</p></div>
-									</div>
-									<div className="row">
-										<div className="col-sm-4 recruiting-tracking-btn background-blue"onClick={this.handleCampusClick}><p>WAS INVITED TO CAMPUS</p></div>
-										<div className="col-sm-4 recruiting-tracking-btn background-blue"onClick={this.handleOfferedClick}><p>WAS OFFERED</p></div>
+				<div className="container">
+					<div className="row">
+						<div className="col-sm-3">
+							<div className="panel-container">
+								<div id="program-name" ><h5>{task.firstName} {task.lastName}</h5></div>
+								<div id="" className="data-cat-btn background-gray" onClick={this.handleDashboardClick}>
+									<h5>Dashboard</h5>
+								</div>
+								<div id="" className="data-cat-btn background-gray" onClick={this.handleSummaryClick}>
+									<h5>Summary</h5>
+								</div>
+								<div className="panel-cat-name">
+									<h5>Edit Profile</h5>
+								</div>
+								<div id="" className="data-cat-btn background-gray" onClick={this.handleEditProfileClick}>
+									<h5>Prospect Information</h5>
+								</div>
+								<div id="" className="data-cat-btn background-gray" onClick={this.handleEditPricingPlanClick}>
+									<h5>Pricing Plan</h5>
+								</div>
+				
+								<div className="panel-cat-name">
+									<h5>Premium Service</h5>
+								</div>
+								<div id="" className="data-cat-btn background-gray" onClick={this.handleVideoServiceClick.bind(this)}>
+									<h5>Video Service</h5>
+								</div>
+								<div id="" className="data-cat-btn background-gray" onClick={this.handleMarketingServiceClick.bind(this)}>
+									<h5>Marketing Service</h5>
+								</div>
+							</div>    				
+						</div>
+                    	<div className="col-sm-9">
+							<div>
+								<u><h5 id="prospect-clubname">{task.pricePlan}</h5></u>
+								<u><h5 onClick={this.coachesView} id="prospect-coach-view" className="text-right">View What Coaches See</h5></u>
+							</div>
+							<div className="registered-prospect-container">
+							
+								<div id="prospect-updates-container">
+									<h2 id="" className="text-center prospect-interest" >Recruiting Interest</h2>
+									<p id="prospect-interest-caption" className="text-center background-light-gray">Build your profile by tracking how schools are recruiting you.  This info will be used for recruiting summaries sent to college coaches.</p>
+									<div id="recruiting-tracking">    						
+										<div className="row">
+											<div className="col-sm-4 recruiting-tracking-btn background-blue" onClick={this.handleLetterClick}><p>RECEIVED A LETTER</p></div>
+											<div className="col-sm-4 recruiting-tracking-btn background-blue" onClick={this.handleTextClick}><p>RECEIVED A TEXT</p></div>
+											<div className="col-sm-4 recruiting-tracking-btn background-blue" onClick={this.handleEmailClick}><p>RECEIVED AN EMAIL</p></div>
+										</div>
+										<div className="row">
+											<div className="col-sm-4 recruiting-tracking-btn background-blue" onClick={this.handleCallClick}><p>RECEIVED A PHONE CALL</p></div>
+											<div className="col-sm-4 recruiting-tracking-btn background-blue" onClick={this.handleCampClick}><p>WAS INVITED TO A CAMP</p></div>
+											<div className="col-sm-4 recruiting-tracking-btn background-blue" onClick={this.handleWorkoutClick}><p>HAD A PRIVATE WORKOUT</p></div>
+										</div>
+										<div className="row">
+											<div className="col-sm-4 recruiting-tracking-btn background-blue"onClick={this.handleCampusClick}><p>WAS INVITED TO CAMPUS</p></div>
+											<div className="col-sm-4 recruiting-tracking-btn background-blue"onClick={this.handleOfferedClick}><p>WAS OFFERED</p></div>
+										</div>
 									</div>
 								</div>
-                           	</div>
-                           	<div className="g-col">
+                    
 							
 						
-							</div>
-                           	<div id="player-d1-recruiting-summary" className="">
-								<h2 id="prospect-interest" className="text-center" >D1 Recruiting Interest</h2>
-								<div id="recruiting-interest-cats">   
-									<ul>
-										<li className="btn btn-default" onClick={this.handleD1HMFilter}>High Major</li>
-										<li className="btn btn-default" onClick={this.handleD1HMMMFilter}>High Major - / Mid-Major +</li>
-										<li className="btn btn-default background-blue" onClick={this.handleD1MMFilter}>Mid-Major</li>
-										<li className="btn btn-default background-blue" onClick={this.handleD1MMLMFilter}>Mid-Major - / Low Major +</li>
-										<li className="btn btn-default" onClick={this.handleD1LMFilter}>Low Major</li>
-									</ul>						
-								</div>
-								<div id="all-d1-schools-recruiting-feed" className="recruiting-activity-feed" >
-									<ul className=" list-unstyled" >
-										<li className="prospect-button background-light-gray" onClick={this.handleCollegeRecruitingSummary}>Southwest Minnesota University</li>
-										<li className="prospect-button background-light-gray" onClick={this.handleCollegeRecruitingSummary}>Drake University</li>
+								<div id="player-recruiting-summaries">
+									<ul className="prospect-categories list-inline">
+										<li className="cat-btn background-blue" onClick={this.handleD1SummaryClick}>D1</li>
+										<li className="cat-btn background-blue" onClick={this.handleD2SummaryClick}>D2</li>
+										<li className="cat-btn " onClick={this.handleD3SummaryClick}>D3</li>
+										<li className="cat-btn " onClick={this.handleD4SummaryClick}>NAIA</li>
+										<li className="cat-btn " onClick={this.handleD5SummaryClick}>JUCO</li>
 									</ul>
+									<div id="player-d1-recruiting-summary" className="">
+										<h2 id="" className="text-center prospect-interest" >D1 Recruiting Interest</h2>
+										<div id="recruiting-interest-cats">   
+											<ul>
+												<li className="btn btn-default" onClick={this.handleD1HMFilter}>High Major</li>
+												<li className="btn btn-default" onClick={this.handleD1HMMMFilter}>High Major - / Mid-Major +</li>
+												<li className="btn btn-default background-blue" onClick={this.handleD1MMFilter}>Mid-Major</li>
+												<li className="btn btn-default background-blue" onClick={this.handleD1MMLMFilter}>Mid-Major - / Low Major +</li>
+												<li className="btn btn-default" onClick={this.handleD1LMFilter}>Low Major</li>
+											</ul>						
+										</div>
+										<div id="all-d1-schools-recruiting-feed" className="recruiting-activity-feed" >
+											<ul className=" list-unstyled" >
+												<li className="prospect-button background-light-gray" onClick={this.handleCollegeRecruitingSummary}>Southwest Minnesota University</li>
+												<li className="prospect-button background-light-gray" onClick={this.handleCollegeRecruitingSummary}>Drake University</li>
+											</ul>
+										</div>
+										<div id="hm-schools-recruiting-feed" className="recruiting-activity-feed" >
+											<ul className=" list-unstyled" >
+												<li className="prospect-button background-light-gray" onClick={this.handleCollegeRecruitingSummary}>task.High Major</li>
+												<li className="prospect-button background-light-gray" onClick={this.handleCollegeRecruitingSummary}>Drake University</li>
+											</ul>
+										</div>
+										<div id="hmmm-schools-recruiting-feed" className="recruiting-activity-feed" >
+											<ul className=" list-unstyled" >
+												<li className="prospect-button background-light-gray" onClick={this.handleCollegeRecruitingSummary}>task.High Major - / Mid-Major +</li>
+												<li className="prospect-button background-light-gray" onClick={this.handleCollegeRecruitingSummary}>Drake University</li>
+											</ul>
+										</div>
+										<div id="mm-schools-recruiting-feed" className="recruiting-activity-feed" >
+											<ul className=" list-unstyled" >
+												<li className="prospect-button background-light-gray" onClick={this.handleCollegeRecruitingSummary}>task.Mid-Major +</li>
+												<li className="prospect-button background-light-gray" onClick={this.handleCollegeRecruitingSummary}>Drake University</li>
+											</ul>
+										</div>
+										<div id="mmlm-schools-recruiting-feed" className="recruiting-activity-feed" >
+											<ul className=" list-unstyled" >
+												<li className="prospect-button background-light-gray" onClick={this.handleCollegeRecruitingSummary}>task.Mid-Major - / Low Major +</li>
+												<li className="prospect-button background-light-gray" onClick={this.handleCollegeRecruitingSummary}>Drake University</li>
+											</ul>
+										</div>
+										<div id="lm-schools-recruiting-feed" className="recruiting-activity-feed" >
+											<ul className=" list-unstyled" >
+												<li className="prospect-button background-light-gray" onClick={this.handleCollegeRecruitingSummary}>task.Low Major +</li>
+												<li className="prospect-button background-light-gray" onClick={this.handleCollegeRecruitingSummary}>Drake University</li>
+											</ul>
+										</div>
+									</div>
+									<div id="player-d2-recruiting-summary" className="text-center">
+										<h2 id="" className="text-center prospect-interest" >D2 Recruiting Interest</h2>
+										<div className="recruiting-activity-feed" >
+											<ul className=" list-unstyled" >
+												<li className="prospect-button background-light-gray" onClick={this.handleCollegeRecruitingSummary}>D2 school</li>
+												<li className="prospect-button background-light-gray" onClick={this.handleCollegeRecruitingSummary}>Drake University</li>
+											</ul>
+										</div>
+									</div>
+									<div id="player-d3-recruiting-summary" className="text-center">
+										<h2 id="" className="text-center prospect-interest" >D3 Recruiting Interest</h2>
+										<div className="recruiting-activity-feed" >
+											<ul className=" list-unstyled" >
+												<li className="prospect-button background-light-gray" onClick={this.handleCollegeRecruitingSummary}>D3 school</li>
+												<li className="prospect-button background-light-gray" onClick={this.handleCollegeRecruitingSummary}>Drake University</li>
+											</ul>
+										</div>
+									</div>
+									<div id="player-d4-recruiting-summary" className="text-center">
+										<h2 id="" className="text-center prospect-interest" >NAIA Recruiting Interest</h2>
+										<div className="recruiting-activity-feed" >
+											<ul className=" list-unstyled" >
+												<li className="prospect-button background-light-gray" onClick={this.handleCollegeRecruitingSummary}>NAIA school</li>
+												<li className="prospect-button background-light-gray" onClick={this.handleCollegeRecruitingSummary}>Drake University</li>
+											</ul>
+										</div>
+									</div>
+									<div id="player-d5-recruiting-summary" className="text-center">
+										<h2 id="" className="text-center prospect-interest" >JUCO Recruiting Interest</h2>
+										<div className="recruiting-activity-feed" >
+											<ul className=" list-unstyled" >
+												<li className="prospect-button background-light-gray" onClick={this.handleCollegeRecruitingSummary}>JUCO school</li>
+												<li className="prospect-button background-light-gray" onClick={this.handleCollegeRecruitingSummary}>Drake University</li>
+											</ul>
+										</div>
+									</div>
 								</div>
-								<div id="hm-schools-recruiting-feed" className="recruiting-activity-feed" >
-									<ul className=" list-unstyled" >
-										<li className="prospect-button background-light-gray" onClick={this.handleCollegeRecruitingSummary}>task.High Major</li>
-										<li className="prospect-button background-light-gray" onClick={this.handleCollegeRecruitingSummary}>Drake University</li>
-									</ul>
-								</div>
-								<div id="hmmm-schools-recruiting-feed" className="recruiting-activity-feed" >
-									<ul className=" list-unstyled" >
-										<li className="prospect-button background-light-gray" onClick={this.handleCollegeRecruitingSummary}>task.High Major - / Mid-Major +</li>
-										<li className="prospect-button background-light-gray" onClick={this.handleCollegeRecruitingSummary}>Drake University</li>
-									</ul>
-								</div>
-								<div id="mm-schools-recruiting-feed" className="recruiting-activity-feed" >
-									<ul className=" list-unstyled" >
-										<li className="prospect-button background-light-gray" onClick={this.handleCollegeRecruitingSummary}>task.Mid-Major +</li>
-										<li className="prospect-button background-light-gray" onClick={this.handleCollegeRecruitingSummary}>Drake University</li>
-									</ul>
-								</div>
-								<div id="mmlm-schools-recruiting-feed" className="recruiting-activity-feed" >
-									<ul className=" list-unstyled" >
-										<li className="prospect-button background-light-gray" onClick={this.handleCollegeRecruitingSummary}>task.Mid-Major - / Low Major +</li>
-										<li className="prospect-button background-light-gray" onClick={this.handleCollegeRecruitingSummary}>Drake University</li>
-									</ul>
-								</div>
-								<div id="lm-schools-recruiting-feed" className="recruiting-activity-feed" >
-									<ul className=" list-unstyled" >
-										<li className="prospect-button background-light-gray" onClick={this.handleCollegeRecruitingSummary}>task.Low Major +</li>
-										<li className="prospect-button background-light-gray" onClick={this.handleCollegeRecruitingSummary}>Drake University</li>
-									</ul>
-								</div>
-							</div>
-							<div id="player-d2-recruiting-summary" className="text-center">
-								<h2 id="prospect-interest" className="text-center" >D2 Recruiting Interest</h2>
-								<div className="recruiting-activity-feed" >
-									<ul className=" list-unstyled" >
-										<li className="prospect-button background-light-gray" onClick={this.handleCollegeRecruitingSummary}>D2 school</li>
-										<li className="prospect-button background-light-gray" onClick={this.handleCollegeRecruitingSummary}>Drake University</li>
-									</ul>
-								</div>
-							</div>
-							<div id="player-d3-recruiting-summary" className="text-center">
-								<h2 id="prospect-interest" className="text-center" >D3 Recruiting Interest</h2>
-								<div className="recruiting-activity-feed" >
-									<ul className=" list-unstyled" >
-										<li className="prospect-button background-light-gray" onClick={this.handleCollegeRecruitingSummary}>D3 school</li>
-										<li className="prospect-button background-light-gray" onClick={this.handleCollegeRecruitingSummary}>Drake University</li>
-									</ul>
-								</div>
-							</div>
-							<div id="player-d4-recruiting-summary" className="text-center">
-								<h2 id="prospect-interest" className="text-center" >NAIA Recruiting Interest</h2>
-								<div className="recruiting-activity-feed" >
-									<ul className=" list-unstyled" >
-										<li className="prospect-button background-light-gray" onClick={this.handleCollegeRecruitingSummary}>NAIA school</li>
-										<li className="prospect-button background-light-gray" onClick={this.handleCollegeRecruitingSummary}>Drake University</li>
-									</ul>
-								</div>
-							</div>
-							<div id="player-d5-recruiting-summary" className="text-center">
-								<h2 id="prospect-interest" className="text-center" >JUCO Recruiting Interest</h2>
-								<div className="recruiting-activity-feed" >
-									<ul className=" list-unstyled" >
-										<li className="prospect-button background-light-gray" onClick={this.handleCollegeRecruitingSummary}>JUCO school</li>
-										<li className="prospect-button background-light-gray" onClick={this.handleCollegeRecruitingSummary}>Drake University</li>
-									</ul>
-								</div>
-							</div>
-                        </div>
+								
+                        </div> {/*closing tag for "col-sm-9"*/}
+                        
                         <div id="upgrade-price-plan" className="recruit-update-container text-center">
 						  <u><h3>Premium Services</h3></u>
 						  <div className="letter-attributes background-light-gray text-center">
@@ -646,6 +655,7 @@ export class ProspectDashboard extends Component {
 						  </div>
 						  <button className="btn btn-default btn-large" onClick={this.submitUpdate}>Close</button>        
 						</div>
+						
 						<div id="recruiting-activity-summary" className="college-recruiting-summary text-center">
 						  <u><h5>Drake University & {task.firstName} {task.lastName}</h5></u>
 						  <ul className="list-unstyled text-left">
@@ -989,7 +999,7 @@ export class ProspectDashboard extends Component {
 								<li className="cat-btn background-blue">NAIA</li>
 								<li className="cat-btn background-blue">JUCO</li>
 							</ul>
-							<h2 id="prospect-interest" className="text-center" >Recruiting Interest</h2>
+							<h2 id="" className="text-center prospect-interest" >Recruiting Interest</h2>
 							<div id="recruiting-interest-cats">   
 								<ul>
 									<li className="btn btn-default">High Major</li>

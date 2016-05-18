@@ -49,7 +49,8 @@ export class TaskForm extends Component {
       this.state['classRank'       ]='';
       this.state['gender'          ]='';
       this.state['pricePlan'       ]='';
-      this.state['collegeProgramGender']='';     
+      this.state['collegeProgramGender']='';
+      this.state['searchSchools']='';     
       //debugger;
       this.state[key]=value;
 
@@ -81,7 +82,12 @@ console.log('State : '+this.state);
   }
 
   onChangePricePlan(event) {
-      this.state['pricePlan']=event.target.value; 
+      this.state['pricePlan']=event.target.value;
+      this.state['registered']= 'true'; 
+  }
+  
+  onChangeSearchSchools(event) {
+      this.setState({searchSchools: event.target.value}); 
   }
 
   onKeyUp(event) {
@@ -100,19 +106,21 @@ console.log('State : '+this.state);
     // tasks.length ? this.props.updateTask(this.props.tasks[0], this.state): this.firstSubmit(title, event.target.value);
     this.props.updateTask(this.props.tasks[0], this.state);
     //this.clearInput();
-    if (title.pricePlan == "") {
+    if (tasks[0].pricePlan == '') {
     document.getElementById('general-info').style.display='none';
   	document.getElementById('prospect-plans-features').style.display='block';
   	window.scrollTo(0, 0);
     } else {
-    document.getElementById('general-info').style.display='none';
+  	document.getElementById('general-info').style.display='none';
   	document.getElementById('prospect-dashboard').style.display='block';
   	window.scrollTo(0, 0);
   	}
   }
   
    onSubmit2(event) {
-    event.preventDefault();
+   	
+   	event.preventDefault();
+    
     const title = this.state.title.trim();
     //this.props.createTask(this.state);
 
@@ -121,7 +129,8 @@ console.log('State : '+this.state);
     // tasks.length ? this.props.updateTask(this.props.tasks[0], this.state): this.firstSubmit(title, event.target.value);
     this.props.updateTask(this.props.tasks[0], this.state);
     //this.clearInput();
-    if (title.firstName !== "") {
+    
+    if (tasks[0].registered === "true") {
     document.getElementById('prospect-plans-features').style.display='none';
   	document.getElementById('prospect-dashboard').style.display='block';
   	window.scrollTo(0, 0);
@@ -130,6 +139,7 @@ console.log('State : '+this.state);
   	document.getElementById('prospect-confirmation').style.display='block';
   	window.scrollTo(0, 0);
   	}
+  	
   }
      
     submitUpdate(event) {
@@ -166,7 +176,7 @@ console.log('State : '+this.state);
                   autoFocus
                   className="task-form__input"
                   maxLength="64"
-                  onChange={this.onChange.bind(this,objRef, this.displayAcademicInfo )}
+                  onChange={this.onChange.bind(this,objRef )}
                   onKeyUp={this.onKeyUp}
                   
                   placeholder={tasks.length && tasks[0][objRef] != "" ? tasks[0][objRef] :objDisplay} 
@@ -178,6 +188,7 @@ console.log('State : '+this.state);
           )
       });
   }
+
 
   render() {
       var genInfo={
@@ -513,17 +524,12 @@ console.log('State : '+this.state);
       
       	<div id="letter-update" className="recruit-update-container text-center">
 			<u><h3>Recruiting Letter</h3></u>
-			<input type="text"/><div className="btn-default search">Search School</div>
-			<div className="letter-attributes background-light-gray">
-				<select id="letter" className="form-control standalone" type="select" label="Select" placeholder="select">
-					<option value="NCAA D1">NCAA D1</option>
-					<option value="NCAA D2">NCAA D2</option>
-					<option value="NCAA D3">NCAA D3</option>
-					<option value="NCAA NAIA">NCAA NAIA</option>
-					<option value="NCAA JUCO">NCAA JUCO</option>
-				</select> 
+			<input type="text" onChange={ this.onChangeSearchSchools.bind(this)} value={this.state.searchSchools} />
+			<div className="btn-default search" onClick={this.searchSchools}>Search Schools</div>
+			<div id="matching-schools" className="letter-attributes background-light-gray">
+			
 			</div> 
-			<button className="btn btn-default btn-large" onClick={this.submitUpdate}>Submit</button>       
+			<button className="btn btn-default btn-large" >Submit</button>       
 		</div>
         
         <div id="text-update" className="recruit-update-container text-center">
@@ -644,7 +650,7 @@ console.log('State : '+this.state);
     					<div className="timeline-image1 background-gray">
     						<h2>1</h2>
     					</div>
-    					<h5 className="timeline-heading1">CREATE ACCOUNT</h5>
+    					<h5 className="timeline-heading1">SIGN IN</h5>
     				</div>
     				<div className="col-sm-4">
     					<div className="timeline-image2 background-blue">
