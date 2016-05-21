@@ -328,12 +328,16 @@ export class ProspectDashboard extends Component {
  
   handleVideoServiceClick(event)  {
   		debugger;
-  	if (this.props.task.pricePlan == "Basic Plan") {
+  			    document.getElementById("upgrade-price-plan").style.display='block';
+
+ {/* 	if (this.props.task.pricePlan == "Basic Plan") {
 	    document.getElementById("upgrade-price-plan").style.display='block';
 	} else {
   	document.getElementById('prospect-dashboard').style.display='none';
   	document.getElementById('video-upload').style.display='block';
-  	}
+  	}   */}
+  	
+  	
   }
 
   handleMarketingServiceClick(event)  {
@@ -651,7 +655,8 @@ export class ProspectDashboard extends Component {
                         <div id="upgrade-price-plan" className="recruit-update-container text-center">
 						  <u><h3>Premium Services</h3></u>
 						  <div className="letter-attributes background-light-gray text-center">
-			 				<p>To access these services please upgrade your pricing plan.</p>
+		<p>Under Development: If you need more info or help contact Alex@theprospectsource.com </p>
+		{/************************	 				<p>To access these services please upgrade your pricing plan.</p> */}
 						  </div>
 						  <button className="btn btn-default btn-large" onClick={this.submitUpdate}>Close</button>        
 						</div>
